@@ -1,0 +1,11 @@
+# Research PDF documents (too large for GitHub Pages)
+File/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
