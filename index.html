@@ -234,19 +234,23 @@
         Explore the academic foundations, methodology, and technical architecture of our research.
       </p>
 
-      <!-- Domain Tabs -->
-      <div class="domain-tabs reveal">
-        <button class="domain-tab active" data-tab="architecture">🏗️ Architecture</button>
-        <button class="domain-tab" data-tab="literature">📖 Literature Survey</button>
-        <button class="domain-tab" data-tab="gap">🔎 Research Gap</button>
-        <button class="domain-tab" data-tab="problem">❓ Research Problem</button>
-        <button class="domain-tab" data-tab="objectives">🎯 Objectives</button>
-        <button class="domain-tab" data-tab="methodology">⚙️ Methodology</button>
-        <button class="domain-tab" data-tab="technologies">🛠️ Technologies</button>
-      </div>
+      <div class="domain-split-layout">
+        <!-- Domain Tabs (Sidebar) -->
+        <div class="domain-sidebar reveal">
+          <div class="domain-tabs">
+            <button class="domain-tab active" data-tab="architecture">🏗️ Architecture</button>
+            <button class="domain-tab" data-tab="literature">📖 Literature Survey</button>
+            <button class="domain-tab" data-tab="gap">🔎 Research Gap</button>
+            <button class="domain-tab" data-tab="problem">❓ Research Problem</button>
+            <button class="domain-tab" data-tab="objectives">🎯 Objectives</button>
+            <button class="domain-tab" data-tab="methodology">⚙️ Methodology</button>
+            <button class="domain-tab" data-tab="technologies">🛠️ Technologies</button>
+          </div>
+        </div>
 
-      <!-- Tab Contents -->
-      <!-- Architecture -->
+        <!-- Tab Contents Area -->
+        <div class="domain-content-area">
+          <!-- Architecture -->
       <div class="domain-content active" id="tab-architecture">
         <div class="glass-card domain-content-inner" style="text-align: left;">
           <h3>🏗️ System Architecture</h3>
@@ -430,6 +434,7 @@
             <span class="tech-tag">📊 Matplotlib / Seaborn</span>
             <span class="tech-tag">🗂️ OWASP</span>
           </div>
+        </div>
         </div>
       </div>
     </div>

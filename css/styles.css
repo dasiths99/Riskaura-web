@@ -640,36 +640,105 @@ section:nth-child(even) {
 }
 
 /* --- Domain Section (Tabs) --- */
-.domain-tabs {
+.domain-split-layout {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
   margin-bottom: 40px;
 }
 
+@media (min-width: 992px) {
+  .domain-split-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+  }
+}
+
+.domain-sidebar {
+  flex: 0 0 260px;
+  position: sticky;
+  top: 100px;
+}
+
+.domain-content-area {
+  flex: 1;
+  min-width: 0;
+}
+
+.domain-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 991px) {
+  .domain-tabs {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-cyan) transparent;
+  }
+}
+
 .domain-tab {
-  padding: 10px 22px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  padding: 16px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
   color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-full);
+  border-left: 3px solid transparent;
+  border-radius: 12px;
   cursor: pointer;
   transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 991px) {
+  .domain-tab {
+    white-space: nowrap;
+    border-left: 1px solid var(--border-subtle);
+    border-bottom: 3px solid transparent;
+  }
 }
 
 .domain-tab:hover {
   color: var(--text-secondary);
   border-color: rgba(6, 182, 212, 0.3);
+  border-left-color: rgba(6, 182, 212, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+@media (max-width: 991px) {
+  .domain-tab:hover {
+    transform: translateY(-3px);
+  }
 }
 
 .domain-tab.active {
   color: var(--accent-cyan-light);
-  background: rgba(6, 182, 212, 0.1);
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.15) 0%, rgba(139, 92, 246, 0.02) 100%);
   border-color: rgba(6, 182, 212, 0.4);
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.1);
+  border-left: 3px solid var(--accent-cyan);
+  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.1);
+  font-weight: 600;
+  transform: translateX(8px);
+}
+
+@media (max-width: 991px) {
+  .domain-tab.active {
+    border-left: 1px solid rgba(6, 182, 212, 0.4);
+    border-bottom: 3px solid var(--accent-cyan);
+    background: linear-gradient(180deg, rgba(6, 182, 212, 0.02) 0%, rgba(6, 182, 212, 0.15) 100%);
+    transform: translateY(-5px);
+  }
 }
 
 .domain-content {
